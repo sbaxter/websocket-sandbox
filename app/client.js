@@ -10,9 +10,9 @@ var client = client || {};
   function _print( msg ) {
     var selector = msg.user.name === '[system]' ? ' class="system" ' : '';
   
-    if ( !msg.hasOwnProperty( 'user' )
-         || !msg.hasOwnProperty( 'name' )
-         || !msg.hasOwnProperty( 'color' ) )
+    if ( !msg.hasOwnProperty( 'msg' )
+         || !msg.user.hasOwnProperty( 'name' )
+         || !msg.user.hasOwnProperty( 'color' ) )
     {
         return false;
     }
