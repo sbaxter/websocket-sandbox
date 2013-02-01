@@ -9,6 +9,13 @@ var client = client || {};
 
   function _print( msg ) {
     var selector = msg.user.name === '[system]' ? ' class="system" ' : '';
+  
+    if ( !msg.hasOwnProperty( 'user' )
+         || !msg.hasOwnProperty( 'name' )
+         || !msg.hasOwnProperty( 'color' ) )
+    {
+        return false;
+    }
 
   // Add a line to the viewer.
     return client.$viewer

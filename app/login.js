@@ -35,6 +35,7 @@ var client = client || {};
     var that = this;
 
     if ( typeof that.socket === 'undefined' ) {
+      // TODO: .fail()
       $.getScript('./app/client.js').done( function() {
           that.connect();
       });
@@ -48,6 +49,8 @@ var client = client || {};
 
   // Quick and dirty input validation.
   client.validate = function ( str ) {
+    // trim, strip tags, and then check to make sure the message 
+    //   is not blank.
     str = str.replace( /^\s\s*/, '' ).replace( /\s\s*$/, '' )
              .replace(/(<([^>]+)>)/ig,"");
 

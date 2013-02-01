@@ -69,6 +69,7 @@ io.sockets.on( 'connection', function ( socket ) {
     // a client sent a message
     data.user = clients[ data.user ];
     data.msg = data.msg.replace( /(<([^>]+)>)/ig, '' );
+    data.color = data.color || '#333';
     socket.broadcast.emit( 'broadcast', data );
   })
 
