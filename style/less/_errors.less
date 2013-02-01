@@ -1,0 +1,15 @@
+.error {
+  color: @errorText;
+
+  input& {
+    border: @errorBorder;
+    background: @errorBackground;
+  }
+    
+  label& {
+    display: none;
+    &.inline {
+      display: inline;
+    }
+  }
+}
