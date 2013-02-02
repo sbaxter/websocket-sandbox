@@ -113,8 +113,17 @@ var client = client || {};
       .on( 'logout', function ( msg ) {
       // notify when other users disconnect
         _print( msg );
-      });
+      })
 
+      .on( 'reconnecting', function () {
+        console.log( 'attempting to reconnect' );
+        client.deactivate();
+      })
+
+      .on( 'reconnect', function () {
+        console.log( 'reconnected' );
+        client.reactivate();
+      });
     });
 
     return this;
@@ -131,6 +140,16 @@ var client = client || {};
     this.$viewer.fadeIn();
 
     return this;
+  };
+
+  client.deactivate = function () {
+    this.$input.prop( 'disabled', true );
+    $( 'body' ).addClass( 'inactive' );
+  };
+
+  client.reactivate = function () {
+    $( 'body' ).removeClass( 'inactive' );
+    this.$input.prop( 'disabled', false );
   };
 
   return client;
