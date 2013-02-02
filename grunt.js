@@ -4,7 +4,7 @@ module.exports = function( grunt ) {
     pkg: grunt.file.readJSON( 'package.json' )
 
     , lint: {
-      files: [ 'app/login.js', 'app/client.js' ]
+      files: [ 'client/js/*.js', 'index.js', 'server/*.js' ]
     }
 
     , jshint: {
@@ -26,13 +26,18 @@ module.exports = function( grunt ) {
       , globals: {
         jQuery      : true
         , io        : true
+        , node      : true
+        , require   : true
+        , console   : true
+        , __dirname : true
+        , module    : true
       }
     }
 
     , less: {
       development: {
         files: {
-          'style/style.css' : 'style/less/_main.less'
+          'client/css/style.css' : 'client/css/less/_main.less'
         }
       }
     }

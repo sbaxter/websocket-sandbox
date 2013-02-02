@@ -1,19 +1,18 @@
 {
   "name": "Web Socket Sandbox"
-  , "version": "0.1.0"
+  , "version": "0.2.0"
   , "description": "A chat client I made to play with web sockets"
   , "author": "Seth Baxter <me@sethbaxter.com>"
-  , "main": "app/server.js"
+  , "main": "index.js"
   , "repository": {
     "type": "git"
     , "url": "git@github.com:sbaxter/socket-sandbox.git"
   }
   , "dependencies": {
     "socket.io" : "0.9.x"
-    , "http" : "0.0.0"
-    , "fs" : "0.0.0"
+    , "http" : "0.x.x"
+    , "fs" : "0.x.x"
+    , "prompt" : "0.2.9"
   }
-  , "engines" : {
-    "node.js" : "0.8.x"
-  }
+  , "engine" : ">= node 0.8.x"
 }
