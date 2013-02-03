@@ -3415,9 +3415,6 @@ input.error {
 label.error {
   display: none;
 }
-label.error.inline {
-  display: inline;
-}
 .spinner {
   z-index: 9999999;
   position: fixed;

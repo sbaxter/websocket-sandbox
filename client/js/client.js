@@ -96,7 +96,7 @@ var client = client || {};
         } else {
           // show error messages if username is invalid
           that.$user.addClass( 'error' ).focus();
-          $( '.js-error' ).addClass( 'inline' );
+          $( '.js-error' ).show();
         }
       })
     
@@ -133,11 +133,10 @@ var client = client || {};
   // wipe errors and load the viewer and message input
     this.$modal.modal( 'hide' );
     this.$backdrop = $( '.spinner' ).modal( client.modalOpts );
-    this.$user.removeClass( 'error' )
-              .unbind( 'keypress' )
-              .prop( 'disabled', true );
+    this.$user.unbind( 'keypress' ).prop( 'disabled', true );
     this.$login.off( 'click' ).remove();
-    $( '.form-inline' ).find( 'label' ).remove();
+    this.$modal.remove();
+
     this.$input.parent().fadeIn();
     this.$viewer.fadeIn();
 
