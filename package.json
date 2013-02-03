@@ -13,6 +13,7 @@
     , "http" : "0.x.x"
     , "fs" : "0.x.x"
     , "prompt" : "0.2.9"
+    , "mime" : "1.2.9"
   }
   , "engine" : ">= node 0.8.x"
 }
