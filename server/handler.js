@@ -6,6 +6,9 @@ module.exports = function ( request, response ) {
 
   file = ( file === '/' || file === '' ) ? 'index.html' : file;
   dir = ( file.indexOf( 'components' ) !== -1 ) ? __dirname + '/../' : dir;
+  if ( file.indexOf( 'fontawesome' ) !== -1 ) {
+    dir = __dirname + '/../components/font-awesome/';
+  }
 
   // Read File
   fs.readFile( dir + file, function ( error, data ) {

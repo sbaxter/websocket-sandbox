@@ -3,6 +3,15 @@ var client = client || {};
 ( function ( $, client ) {
   'use strict';
 
+  client.modalOpts = {
+    backdrop: 'static'
+    , keyboard: false
+    , show:true
+  };
+  
+  client.$modal = $( '.modal' ).modal( client.modalOpts );
+  client.modalOpts.show = false;
+
   client.init = function () {
     $.getJSON('config.json').done( function( data ) {
       client.host = data.host;  

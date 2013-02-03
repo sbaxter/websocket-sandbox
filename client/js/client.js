@@ -131,6 +131,8 @@ var client = client || {};
 
   client.activate = function () {
   // wipe errors and load the viewer and message input
+    this.$modal.modal( 'hide' );
+    this.$backdrop = $( '.spinner' ).modal( client.modalOpts );
     this.$user.removeClass( 'error' )
               .unbind( 'keypress' )
               .prop( 'disabled', true );
@@ -144,12 +146,12 @@ var client = client || {};
 
   client.deactivate = function () {
     this.$input.prop( 'disabled', true );
-    $( 'body' ).addClass( 'inactive' );
+    this.$backdrop.modal( 'show' );
   };
 
   client.reactivate = function () {
-    $( 'body' ).removeClass( 'inactive' );
     this.$input.prop( 'disabled', false );
+    this.$backdrop.modal( 'hide' );
   };
 
   return client;
