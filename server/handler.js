@@ -1,4 +1,6 @@
 module.exports = function ( request, response ) {
+  'use strict';
+
   var fs = require( 'fs-extra' )
     , dir = __dirname + '/../client/'
     , file = request.url.split( '?' )[0]

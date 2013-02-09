@@ -1,37 +1,53 @@
 module.exports = function( grunt ) {
-
+  
   grunt.initConfig({
     pkg: grunt.file.readJSON( 'package.json' )
 
     , lint: {
-      files: [ 'client/js/*.js', 'index.js', 'server/*.js' ]
+      client: 'client/js/*.js'
+      , server: [ 'server/*.js', 'index.js' ]
     }
 
     , jshint: {
-      options: {
-        curly       : true
-        , laxcomma  : true
-        , laxbreak  : true
-        , eqeqeq    : true
-        , immed     : true
-        , latedef   : true
-        , newcap    : true
-        , noarg     : true
-        , sub       : true
-        , undef     : true
-        , boss      : true
-        , eqnull    : true
-        , browser   : true
+      client: {
+        options: {
+          jquery      : true
+          , browser   : true
+          , curly     : true
+          , laxcomma  : true
+          , laxbreak  : true
+          , eqeqeq    : true
+          , immed     : true
+          , latedef   : true
+          , newcap    : true
+          , noarg     : true
+          , sub       : true
+          , undef     : true
+          , boss      : true
+          , eqnull    : true
+        }
+        , globals: {
+          console     : true
+          , io        : true
+        }
       }
-      , globals: {
-        jQuery      : true
-        , io        : true
-        , node      : true
-        , require   : true
-        , console   : true
-        , __dirname : true
-        , module    : true
-      }
+      , server: {
+        options: {
+          node        : true
+          , curly     : true
+          , laxcomma  : true
+          , laxbreak  : true
+          , eqeqeq    : true
+          , immed     : true
+          , latedef   : true
+          , newcap    : true
+          , noarg     : true
+          , sub       : true
+          , undef     : true
+          , boss      : true
+          , eqnull    : true
+        }
+      } 
     }
 
     , less: {

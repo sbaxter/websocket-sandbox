@@ -1,4 +1,6 @@
 ( function () {
+  'use strict';
+
   var handler = require( './handler' )
   , http = require( 'http' ).createServer( handler )
   , io = require( 'socket.io' ).listen( http )
