@@ -14,5 +14,3 @@ Thumbs.db
 .cache
 
 client/config.json
-
-node_modules/grunt*
