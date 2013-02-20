@@ -42,7 +42,7 @@ var handler = require( './handler' )
             activeUsers.push( user );
           }
         }
-        welcomeMsg+= users.join(', '); 
+        welcomeMsg+= activeUsers.join(', '); 
 
         return valid( true, { msg: welcomeMsg, user: clients.sys } );
       })
